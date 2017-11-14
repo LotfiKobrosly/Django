@@ -12,6 +12,8 @@ class Transaction(models.Model):
 	def __str__(self):
 		return self.hashCode
 	
+	def __date__(self):
+		return self.date
 	
 	
 	
