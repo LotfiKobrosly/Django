@@ -12,7 +12,14 @@ class Transaction(models.Model):
 	def __str__(self):
 		return self.hashCode
 	
+	def __date__(self):
+		return self.date
 	
+	def __source__(self):
+		return self.source
+	
+	def __destination__(self):
+		return self.destination
 	
 	
 	
