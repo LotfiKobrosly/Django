@@ -12,9 +12,23 @@ class Transaction(models.Model):
 	def __str__(self):
 		return self.hashCode
 	
-	def __date__(self):
+	def dateOfTransaction(self):
 		return self.date
 	
 	
 	
+class Block(models.Model):
+	date=models.DateTimeField("Date")
+	hashCode=models.CharField("Hash", max_length=64, default="", blank=True)
+	transactions=[]
+	previous=Block
 	
+	
+	def __str__(self):
+		return self.hashCode
+	
+	def dateOfValidation(self):
+		return self.date
+	
+	def previousBlock(self):
+		return self.previous.__str__
